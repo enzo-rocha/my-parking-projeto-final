@@ -60,9 +60,12 @@ flutter:
 
 
   assets:
-    - assets/
+    - assets/images/
   fonts:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Bold.ttf
+    - family: PoppinsLight
+      fonts:
+        - asset: assets/fonts/PoppinsLight-Light.ttf
 

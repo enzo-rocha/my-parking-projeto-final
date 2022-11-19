@@ -14,7 +14,7 @@ OutlineInputBorder _buildBorder(Color color) {
       borderRadius: const BorderRadius.all(Radius.circular(34)),
       borderSide: BorderSide(
         color: color,
-        width: 1.0,
+        width: 2.0,
       ));
 }
 
@@ -68,7 +68,7 @@ class _AddRegisterPageState extends State<AddRegisterPage> {
                       focusedBorder: _buildBorder(Colors.blueAccent),
                       disabledBorder: _buildBorder(Colors.white),
                       labelText: 'Nome do motorista',
-                      labelStyle: const TextStyle(color: Colors.white),
+                      labelStyle: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
                     ),
                   ),
                 ),
@@ -95,7 +95,7 @@ class _AddRegisterPageState extends State<AddRegisterPage> {
                         focusedBorder: _buildBorder(Colors.white),
                         disabledBorder: _buildBorder(Colors.white),
                         labelText: 'Placa do veículo',
-                        labelStyle: const TextStyle(color: Colors.white),
+                        labelStyle: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
                 ),
                   ),
                 ),

@@ -18,8 +18,6 @@ class MyParking extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        brightness: Brightness.light,
-        fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/home',

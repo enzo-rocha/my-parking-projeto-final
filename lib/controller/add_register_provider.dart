@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class AddRegisterProvider with ChangeNotifier {
-  List<Register> registers = [
-    Register(driverName: 'opa', licensePlate: 'opa', entryDate: DateTime.now(),),
-  ];
+  List<Register> registers = [];
 
   addRegister(String name, String plate, DateTime date) {
     registers.add(Register(driverName: name, licensePlate: plate, entryDate: date));

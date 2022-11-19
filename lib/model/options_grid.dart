@@ -5,97 +5,193 @@ class OptionsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(scrollDirection: Axis.horizontal, children: [
-      Row(
-        children: [
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.blueAccent,
-                    borderRadius: BorderRadius.circular(20)),
-                width: 100,
-                height: 100,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/addPage');
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Icon(Icons.add, color: Colors.white,),
-                      Text(
-                        "Adicionar registro",
-                        style: TextStyle(color: Colors.white),
-                      )
-                    ],
+    return ListView(
+      scrollDirection: Axis.vertical,
+      addAutomaticKeepAlives: false,
+      children: [
+        Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(begin: Alignment.topLeft, colors: [
+                        Colors.indigo,
+                        Colors.indigoAccent,
+                        Colors.blue
+                      ]),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    width: 150,
+                    height: 150,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/addPage',
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.add,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          Text(
+                            "Adicionar",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'PoppinsLight',
+                              fontSize: 18
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              )),
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.blueAccent,
-                    borderRadius: BorderRadius.circular(20)),
-                width: 100,
-                height: 100,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/viewRegisterPage');
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Icon(Icons.remove_red_eye, color: Colors.white,),
-                      Text(
-                        "Visuzalizar registros",
-                        style: TextStyle(color: Colors.white),
-                      )
-                    ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(begin: Alignment.topLeft, colors: [
+                        Colors.indigo,
+                        Colors.indigoAccent,
+                        Colors.blue
+                      ]),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    width: 150,
+                    height: 150,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/viewRegisterPage',
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.remove_red_eye,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          Text(
+                            "Visuzalizar",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'PoppinsLight',
+                              fontSize: 18
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              )),
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(20)),
-                width: 100,
-                height: 100,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/addPage');
-                  },
-                  child: const Text(
-                    "Opa",
-                    style: TextStyle(color: Colors.white),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(begin: Alignment.topLeft, colors: [
+                        Colors.indigo,
+                        Colors.indigoAccent,
+                        Colors.blue
+                      ]),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    width: 150,
+                    height: 150,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/addPage',
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.monetization_on,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          Text(
+                            "Rendimentos",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'PoppinsLight',
+                                fontSize: 18
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              )),
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(20)),
-                width: 100,
-                height: 100,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/addPage');
-                  },
-                  child: const Text(
-                    "Opa",
-                    style: TextStyle(color: Colors.white),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(begin: Alignment.topLeft, colors: [
+                        Colors.indigo,
+                        Colors.indigoAccent,
+                        Colors.blue
+                      ]),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    width: 150,
+                    height: 150,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/viewRegisterPage',
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.remove_red_eye,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          Text(
+                            "Visuzalizar registros",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'PoppinsLight',
+                                fontSize: 18
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ))
-        ],
-      ),
-    ]);
+              ],
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
