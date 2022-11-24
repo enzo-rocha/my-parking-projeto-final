@@ -162,7 +162,7 @@ class OptionsGrid extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(
                           context,
-                          '/viewRegisterPage',
+                          '/numberOfLotsPage',
                         );
                       },
                       child: Column(
@@ -170,12 +170,12 @@ class OptionsGrid extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: const [
                           Icon(
-                            Icons.remove_red_eye,
+                            Icons.car_repair,
                             color: Colors.white,
                             size: 50,
                           ),
                           Text(
-                            "Visuzalizar registros",
+                            "N° de vagas",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'PoppinsLight',

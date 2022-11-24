@@ -1,24 +1,16 @@
-import 'package:final_project/controller/add_register_provider.dart';
+import 'package:final_project/model/add_register_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AddRegisterPage extends StatefulWidget {
-  const AddRegisterPage({Key? key}) : super(key: key);
+   const AddRegisterPage({Key? key}) : super(key: key);
 
   @override
   State<AddRegisterPage> createState() => _AddRegisterPageState();
 }
 
-OutlineInputBorder _buildBorder(Color color) {
-  return OutlineInputBorder(
-      borderRadius: const BorderRadius.all(Radius.circular(34)),
-      borderSide: BorderSide(
-        color: color,
-        width: 2.0,
-      ));
-}
-
 class _AddRegisterPageState extends State<AddRegisterPage> {
+
   final TextEditingController _driverNameController = TextEditingController();
   final TextEditingController _licensePlateController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -26,10 +18,16 @@ class _AddRegisterPageState extends State<AddRegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.popAndPushNamed(context, '/');
-        },
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Adicionar estadias'),
+        backgroundColor: Colors.indigoAccent,
+        shape: const ContinuousRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(40),
+            bottomRight: Radius.circular(40),
+          ),
+        ),
       ),
       body: Form(
         key: _formKey,
@@ -123,4 +121,13 @@ class _AddRegisterPageState extends State<AddRegisterPage> {
       ),
     );
   }
+}
+
+OutlineInputBorder _buildBorder(Color color) {
+  return OutlineInputBorder(
+      borderRadius: const BorderRadius.all(Radius.circular(34)),
+      borderSide: BorderSide(
+        color: color,
+        width: 2.0,
+      ));
 }

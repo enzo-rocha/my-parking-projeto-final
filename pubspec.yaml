@@ -34,6 +34,7 @@ dependencies:
   sqflite: ^2.2.0+3
   intl: ^0.17.0
   provider:
+  page_transition: ^2.0.9
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -68,4 +69,11 @@ flutter:
     - family: PoppinsLight
       fonts:
         - asset: assets/fonts/PoppinsLight-Light.ttf
+
+analyzer:
+  strong-mode: true
+  language:
+      enableSuperMixins: true
+  errors:
+    mixin_inherits_from_not_object: ignore
 

@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../controller/add_register_provider.dart';
+import '../../model/add_register_provider.dart';
 
-class ViewRegisterPage extends StatefulWidget {
+class ViewRegisterPage extends StatelessWidget {
   const ViewRegisterPage({Key? key}) : super(key: key);
 
   @override
-  State<ViewRegisterPage> createState() => _ViewRegisterPageState();
-}
-
-class _ViewRegisterPageState extends State<ViewRegisterPage> {
-  @override
   Widget build(BuildContext context) {
-    final list = context.watch<AddRegisterProvider>().registers;
+    final list = Provider.of<AddRegisterProvider>(context, listen: false).registers as List<Widget>;
     return Scaffold(
-        floatingActionButton: FloatingActionButton(onPressed: () {
-          Navigator.popAndPushNamed(context, '/');
-        }),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Visualizar estadias'),
+        backgroundColor: Colors.indigoAccent,
+        shape: const ContinuousRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(40),
+            bottomRight: Radius.circular(40),
+          ),
+        ),
+      ),
         body: ListView(
           children: list
         )

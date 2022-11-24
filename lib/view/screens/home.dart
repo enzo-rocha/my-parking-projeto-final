@@ -1,4 +1,4 @@
-import 'package:final_project/model/options_grid.dart';
+import 'package:final_project/view/components/options_grid.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -20,7 +20,9 @@ class Home extends StatelessWidget {
               ),
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/settingsPage');
+                  },
                   icon: const Icon(
                     Icons.settings,
                   ),
@@ -35,7 +37,10 @@ class Home extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 centerTitle: true,
-                title: const Text('MyParking', style: TextStyle(fontFamily: 'Poppins'),),
+                title: const Text(
+                  'MyParking',
+                  style: TextStyle(fontFamily: 'Poppins'),
+                ),
                 stretchModes: const [
                   StretchMode.zoomBackground,
                   StretchMode.blurBackground,
