@@ -7,11 +7,11 @@ class ViewRegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = Provider.of<AddRegisterProvider>(context, listen: false).registers as List<Widget>;
+    final list = Provider.of<AddRegisterProvider>(context, listen: false).registers;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Visualizar estadias'),
+        title: const Text('Visualizar estadias'),
         backgroundColor: Colors.indigoAccent,
         shape: const ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(

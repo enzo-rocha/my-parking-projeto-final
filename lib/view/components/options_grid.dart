@@ -1,4 +1,6 @@
+import 'package:final_project/view/screens/number_of_lots_page.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class OptionsGrid extends StatelessWidget {
   const OptionsGrid({Key? key}) : super(key: key);
@@ -18,11 +20,13 @@ class OptionsGrid extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(begin: Alignment.topLeft, colors: [
-                        Colors.indigo,
-                        Colors.indigoAccent,
-                        Colors.blue
-                      ]),
+                      gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          colors: [
+                            Colors.indigo,
+                            Colors.indigoAccent,
+                            Colors.blue
+                          ]),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     width: 150,
@@ -46,10 +50,9 @@ class OptionsGrid extends StatelessWidget {
                           Text(
                             "Adicionar",
                             style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'PoppinsLight',
-                              fontSize: 18
-                            ),
+                                color: Colors.white,
+                                fontFamily: 'PoppinsLight',
+                                fontSize: 18),
                           )
                         ],
                       ),
@@ -60,11 +63,13 @@ class OptionsGrid extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(begin: Alignment.topLeft, colors: [
-                        Colors.indigo,
-                        Colors.indigoAccent,
-                        Colors.blue
-                      ]),
+                      gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          colors: [
+                            Colors.indigo,
+                            Colors.indigoAccent,
+                            Colors.blue
+                          ]),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     width: 150,
@@ -88,10 +93,9 @@ class OptionsGrid extends StatelessWidget {
                           Text(
                             "Visuzalizar",
                             style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'PoppinsLight',
-                              fontSize: 18
-                            ),
+                                color: Colors.white,
+                                fontFamily: 'PoppinsLight',
+                                fontSize: 18),
                           )
                         ],
                       ),
@@ -107,11 +111,13 @@ class OptionsGrid extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(begin: Alignment.topLeft, colors: [
-                        Colors.indigo,
-                        Colors.indigoAccent,
-                        Colors.blue
-                      ]),
+                      gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          colors: [
+                            Colors.indigo,
+                            Colors.indigoAccent,
+                            Colors.blue
+                          ]),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     width: 150,
@@ -137,8 +143,7 @@ class OptionsGrid extends StatelessWidget {
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'PoppinsLight',
-                                fontSize: 18
-                            ),
+                                fontSize: 18),
                           )
                         ],
                       ),
@@ -149,21 +154,24 @@ class OptionsGrid extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(begin: Alignment.topLeft, colors: [
-                        Colors.indigo,
-                        Colors.indigoAccent,
-                        Colors.blue
-                      ]),
+                      gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          colors: [
+                            Colors.indigo,
+                            Colors.indigoAccent,
+                            Colors.blue
+                          ]),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     width: 150,
                     height: 150,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(
-                          context,
-                          '/numberOfLotsPage',
-                        );
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                child: const NumberOfLotsPage(),
+                                type: PageTransitionType.rightToLeft));
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -179,8 +187,7 @@ class OptionsGrid extends StatelessWidget {
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'PoppinsLight',
-                                fontSize: 18
-                            ),
+                                fontSize: 18),
                           )
                         ],
                       ),

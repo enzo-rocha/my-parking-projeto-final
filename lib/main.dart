@@ -8,7 +8,20 @@ import 'package:provider/provider.dart';
 import 'model/add_register_provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(child: const MyParking(), create: (_) => AddRegisterProvider()));
+  Provider.debugCheckInvalidValueType = null;
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider(
+          create: (context) => AddRegisterProvider(),
+        ),
+        Provider(
+          create: (context) => NumberOfLotsState(),
+        ),
+      ],
+      child: const MyParking(),
+    ),
+  );
 }
 
 class MyParking extends StatelessWidget {
