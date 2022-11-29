@@ -1,3 +1,4 @@
+import 'package:final_project/model/number_of_lots_sp.dart';
 import 'package:final_project/view/screens/add_register_page.dart';
 import 'package:final_project/view/screens/home.dart';
 import 'package:final_project/view/screens/number_of_lots_page.dart';
@@ -12,10 +13,10 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        Provider(
+        ChangeNotifierProvider(
           create: (context) => AddRegisterProvider(),
         ),
-        Provider(
+        ChangeNotifierProvider(
           create: (context) => NumberOfLotsState(),
         ),
       ],

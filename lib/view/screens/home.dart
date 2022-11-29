@@ -1,16 +1,23 @@
 import 'package:final_project/view/components/options_grid.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: (context, condition) {
           return <Widget>[
             SliverAppBar(
+              shadowColor: Colors.transparent,
               backgroundColor: Colors.indigoAccent,
               shape: const ContinuousRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -50,10 +57,10 @@ class Home extends StatelessWidget {
             )
           ];
         },
-        body: const Center(
-          child: OptionsGrid(),
-        ),
+        body: Center(
+          child: ListView(children: const [OptionsGrid()]),
       ),
+    ),
     );
   }
 }

@@ -1,8 +1,6 @@
-import 'dart:async';
-
+import 'package:final_project/model/number_of_lots_sp.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class NumberOfLotsPage extends StatefulWidget {
   const NumberOfLotsPage({Key? key}) : super(key: key);
@@ -18,10 +16,16 @@ class _NumberOfLotsPageState extends State<NumberOfLotsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Número de vagas'),
-        backgroundColor: Colors.indigoAccent,
+        title: const Text(
+          'Número de vagas',
+          style: TextStyle(color: Colors.indigoAccent, fontFamily: 'Poppins'),
+        ),
+        iconTheme: const IconThemeData(color: Colors.indigoAccent),
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
         shape: const ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(40),
@@ -44,16 +48,26 @@ class _NumberOfLotsPageState extends State<NumberOfLotsPage> {
               },
             ),
             ElevatedButton(
-              onPressed: () async {
+              onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                    Provider.of<NumberOfLotsState>(context, listen: false).changeNumberOfLots(_numberController.text);
+                  showDialog(context: context, builder: (context) => AlertDialog(
+                    title: const Text("Alterar número de vagas",),
+                    content: Text("Deseja alterar o número atual de vagas (${Provider.of<NumberOfLotsState>(context).numberOfLots})?"),
+
+                    actions: [
+                      TextButton(onPressed: () {
+                        Provider.of<NumberOfLotsState>(context, listen: false).changeNumberOfLots(_numberController.text);
+                        Navigator.pop(context);
+                      }, child: const Text("Sim")),
+                      TextButton(onPressed: () {
+                        Navigator.pop(context);
+                      }, child: const Text("Não")),
+                    ],
+                  ));
                 }
               },
               child: const Text('Confirmar'),
             ),
-            ElevatedButton(onPressed: (){
-              print(Provider.of<NumberOfLotsState>(context, listen: false).numberOfLots);
-            }, child: Text('opa'))
           ],
         ),
       ),
@@ -61,28 +75,3 @@ class _NumberOfLotsPageState extends State<NumberOfLotsPage> {
   }
 }
 
-class NumberOfLotsState extends ChangeNotifier {
-  NumberOfLotsState() {
-    _init();
-  }
-
-  int _numberOfLots = 0;
-  int get numberOfLots => _numberOfLots;
-
-  Future<void> _init() async {
-    final prefs = await SharedPreferences.getInstance();
-    _numberOfLots = prefs.getInt('number') ?? 0;
-      notifyListeners();
-    }
-
-  Future<void> changeNumberOfLots(controller) async {
-    final prefs = await SharedPreferences.getInstance();
-    final text = controller.toString();
-    final number = int.parse(text);
-    _numberOfLots = number;
-    await prefs.setInt('number', _numberOfLots);
-    notifyListeners();
-  }
-
-
-}
