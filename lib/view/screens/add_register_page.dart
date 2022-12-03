@@ -1,12 +1,15 @@
 import 'dart:io';
-import 'package:final_project/model/add_register_provider.dart';
-import 'package:final_project/model/number_of_lots_sp.dart';
+import 'package:final_project/controller/add_register_provider.dart';
+import 'package:final_project/controller/number_of_lots_sp.dart';
+import 'package:final_project/database.dart';
+import 'package:final_project/model/add_register_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 class AddRegisterPage extends StatefulWidget {
-  const AddRegisterPage({Key? key}) : super(key: key);
+  const AddRegisterPage({Key? key,}) : super(key: key);
+
 
   @override
   State<AddRegisterPage> createState() => _AddRegisterPageState();
@@ -172,7 +175,7 @@ class _AddRegisterPageState extends State<AddRegisterPage> {
                             color: Colors.white,
                           )),
                       ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             if (!(Provider.of<AddRegisterProvider>(context,
                                         listen: false)
@@ -181,6 +184,8 @@ class _AddRegisterPageState extends State<AddRegisterPage> {
                                 Provider.of<NumberOfLotsState>(context,
                                         listen: false)
                                     .numberOfLots)) {
+                              var db = DatabaseHelper();
+                              db.insert(Register(driverName: _driverNameController.text, licensePlate: _licensePlateController.text, entryDate: DateTime.now()));
                               Provider.of<AddRegisterProvider>(context,
                                       listen: false)
                                   .addRegister(
@@ -221,8 +226,7 @@ class _AddRegisterPageState extends State<AddRegisterPage> {
   }
 
   Future getImage() async {
-    var temporaryImage =
-        await imagePicker.pickImage(source: ImageSource.camera);
+    var temporaryImage = await imagePicker.pickImage(source: ImageSource.camera);
     if (temporaryImage != null) {
       setState(() {
         pickedImage = File(temporaryImage.path);

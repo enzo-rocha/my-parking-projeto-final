@@ -1,5 +1,5 @@
-import 'package:final_project/model/add_register_provider.dart';
-import 'package:final_project/model/number_of_lots_sp.dart';
+import 'package:final_project/controller/add_register_provider.dart';
+import 'package:final_project/controller/number_of_lots_sp.dart';
 import 'package:final_project/view/screens/number_of_lots_page.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -20,21 +20,21 @@ class OptionsGrid extends StatelessWidget {
               child: Stack(
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
                       'assets/images/cars_parking.png',
                       fit: BoxFit.cover,
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 55, left: 15),
+                    padding: const EdgeInsets.only(top: 65, left: 3),
                     child: SizedBox(
-                      width: 160,
+                      width: 200,
                       height: 150,
                       child: Column(
                         children: [
-                          const Text("Total de vagas:", style: TextStyle(fontFamily: 'PoppinsLight', fontSize: 15),),
-                          Text('${context.watch<AddRegisterProvider>().registers.length} / ${context.watch<NumberOfLotsState>().numberOfLots}', style: const TextStyle(fontFamily: 'PoppinsLight', fontSize: 45),),
+                          const Text("Total de vagas:", style: TextStyle(fontFamily: 'PoppinsLight', fontSize: 22),),
+                          Text('${context.watch<AddRegisterProvider>().registers.length} / ${context.watch<NumberOfLotsState>().numberOfLots}', style: const TextStyle(fontFamily: 'PoppinsLight', fontSize: 50),),
                         ],
                       ),
                     ),
@@ -133,6 +133,7 @@ class OptionsGrid extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(

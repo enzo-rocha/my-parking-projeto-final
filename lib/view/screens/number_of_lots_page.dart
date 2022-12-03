@@ -1,4 +1,4 @@
-import 'package:final_project/model/number_of_lots_sp.dart';
+import 'package:final_project/controller/number_of_lots_sp.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
