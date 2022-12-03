@@ -1,24 +1,28 @@
 import 'dart:io';
 
 class Register {
-
   int? id;
-  final String driverName;
-  final String licensePlate;
-  final DateTime entryDate;
+  final String? driverName;
+  final String? licensePlate;
+  final DateTime? entryDate;
+  final DateTime? exitDate;
   final File? photo;
 
-  Register({this.id, required this.driverName,
-    required this.licensePlate,
-    required this.entryDate,
-    this.photo,});
+  Register({
+    this.id,
+    this.driverName,
+    this.licensePlate,
+    this.entryDate,
+    this.exitDate,
+    this.photo,
+  });
 
-  factory Register.fromMap(Map<String, dynamic> json) =>
-      Register(
+  factory Register.fromMap(Map<String, dynamic> json) => Register(
         id: json['id'],
         driverName: json['driverName'],
-          licensePlate: json['licensePlate'],
-          entryDate: json['entryDate']
+        licensePlate: json['licensePlate'],
+        entryDate: json['entryDate'],
+        exitDate: json['exitDate'],
       );
 
   Map<String, dynamic> toMap() {
@@ -29,7 +33,6 @@ class Register {
       'entryDate': entryDate.toString()
     };
   }
-
 
   @override
   String toString() {

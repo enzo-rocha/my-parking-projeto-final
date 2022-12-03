@@ -10,6 +10,8 @@ class OptionsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final registerLength =
+        context.watch<AddRegisterProvider>().registerDatabase.length;
     return Column(
       children: [
         Padding(
@@ -33,8 +35,16 @@ class OptionsGrid extends StatelessWidget {
                       height: 150,
                       child: Column(
                         children: [
-                          const Text("Total de vagas:", style: TextStyle(fontFamily: 'PoppinsLight', fontSize: 22),),
-                          Text('${context.watch<AddRegisterProvider>().registers.length} / ${context.watch<NumberOfLotsState>().numberOfLots}', style: const TextStyle(fontFamily: 'PoppinsLight', fontSize: 50),),
+                          const Text(
+                            "Total de vagas:",
+                            style: TextStyle(
+                                fontFamily: 'PoppinsLight', fontSize: 22),
+                          ),
+                          Text(
+                            '$registerLength / ${context.watch<NumberOfLotsState>().numberOfLots}',
+                            style: const TextStyle(
+                                fontFamily: 'PoppinsLight', fontSize: 50),
+                          ),
                         ],
                       ),
                     ),
@@ -63,6 +73,8 @@ class OptionsGrid extends StatelessWidget {
                 child: TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/addPage');
+                    Provider.of<AddRegisterProvider>(context, listen: false)
+                        .getRegisters();
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -101,11 +113,13 @@ class OptionsGrid extends StatelessWidget {
                 width: 150,
                 height: 150,
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(
+                  onPressed: () async {
+                    await Navigator.pushNamed(
                       context,
                       '/viewRegisterPage',
                     );
+                    Provider.of<AddRegisterProvider>(context, listen: false)
+                        .getRegisters();
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -133,7 +147,6 @@ class OptionsGrid extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
