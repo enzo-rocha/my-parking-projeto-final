@@ -18,11 +18,20 @@ class Register {
   });
 
   factory Register.fromMap(Map<String, dynamic> json) => Register(
+<<<<<<< HEAD:lib/model/add_register_model.dart
     id: json['id'],
     driverName: json['driverName'],
     licensePlate: json['licensePlate'],
     entryDate: json['entryDate'],
   );
+=======
+        id: json['id'],
+        driverName: json['driverName'],
+        licensePlate: json['licensePlate'],
+        entryDate: json['entryDate'],
+        exitDate: json['exitDate'],
+      );
+>>>>>>> main:lib/model/add_register_controller.dart
 
   Map<String, dynamic> toMap() {
     return {
