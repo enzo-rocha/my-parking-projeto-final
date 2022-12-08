@@ -54,8 +54,8 @@ class Home extends StatelessWidget {
         },
         body: Center(
           child: ListView(children: const [OptionsGrid()]),
+        ),
       ),
-    ),
     );
   }
 }
