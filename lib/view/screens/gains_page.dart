@@ -11,7 +11,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class GainsPage extends StatefulWidget {
-  GainsPage({Key? key}) : super(key: key);
+  const GainsPage({Key? key}) : super(key: key);
 
   @override
   State<GainsPage> createState() => _GainsPageState();
@@ -40,7 +40,7 @@ class _GainsPageState extends State<GainsPage> {
       pdf.addPage(
         pw.MultiPage(
           pageFormat: PdfPageFormat.a4,
-          margin: pw.EdgeInsets.all(32),
+          margin: const pw.EdgeInsets.all(32),
           build: (pw.Context con) {
             return <pw.Widget> [
               pw.Header(
