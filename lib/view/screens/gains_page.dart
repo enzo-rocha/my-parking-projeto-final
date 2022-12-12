@@ -157,8 +157,8 @@ class _GainsPageState extends State<GainsPage> {
                                                   Radius.circular(10)),
                                               color: Colors.white,
                                             ),
-                                            width: 90,
-                                            height: 90,
+                                            width: 70,
+                                            height: 70,
                                             child: const Icon(
                                               Icons.no_photography,
                                               color: Colors.indigoAccent,
