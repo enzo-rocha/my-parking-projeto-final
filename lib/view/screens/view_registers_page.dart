@@ -160,6 +160,7 @@ class _ViewRegisterPageState extends State<ViewRegisterPage> {
                                               register.exitDate ?? DateTime.now(),
                                             );
                                               await stateGains.getRegistersNotNull();
+                                            // ignore: await_only_futures, list_remove_unrelated_type
                                              await stateRegister.registerDatabase.remove(index);
                                             statePhoto.addDelete(statePhoto.photos[index]);
                                             statePhoto.remove(index);
