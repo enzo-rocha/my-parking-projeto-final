@@ -166,8 +166,8 @@ class _GainsPageState extends State<GainsPage> {
                                             ),
                                           )
                                         : SizedBox(
-                                            width: 150,
-                                            height: 90,
+                                            width: 70,
+                                            height: 70,
                                             child: ClipRRect(
                                               borderRadius:
                                                   const BorderRadius.all(
